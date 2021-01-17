@@ -1,0 +1,13 @@
+hostname: "0.0.0.0"
+listen_port: 3000
+pool_size: 1
+secret: "12345"
+apis_path: "config/apidefs"
+sources_path: "config/datasources"
+middleware_path: ""
+redis_connection_string: "@@REDIS_CONNECTION_STRING"
+use_dashboard_configs: true
+dashboard_config:
+  connection_string: "@@DASHBOARD_CONNECTION_STRING"
+enable_control_api: false
+log_level: "info"

@@ -1,0 +1,63 @@
+services:
+  gql-portal-redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - graphql-portal
+
+  gql-portal-mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - graphql-portal
+
+  gql-portal-dashboard:
+    image: gqlportal/dashboard
+    depends_on:
+      - gql-portal-redis
+      - gql-portal-mongo
+    ports:
+      - 3030:3030
+    networks:
+      - graphql-portal
+    environment:
+      - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
+      - MONGODB_CONNECTION_STRING=mongodb://gql-portal-mongo:27017/graphql-portal-dashboard
+      - DASHBOARD_PORT=3030
+      - SECRET=secret
+      - LOG_LEVEL=log
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3030" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  gql-portal-gateway:
+    image: gqlportal/gateway
+    depends_on:
+      gql-portal-redis:
+        condition: service_started
+      gql-portal-dashboard:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    networks:
+      - graphql-portal
+    volumes:
+      - ./config-examples/with-dashboard:/opt/graphql-portal/config/
+    environment:
+      - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
+      - DASHBOARD_CONNECTION_STRING=http://gql-portal-dashboard:3030
+
+volumes:
+  redis-data:
+  mongo-data:
+
+networks:
+  graphql-portal:

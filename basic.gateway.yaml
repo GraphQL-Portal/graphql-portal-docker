@@ -1,4 +1,4 @@
-hostname: "localhost"
+hostname: "0.0.0.0"
 listen_port: 3000
 pool_size: 1
 secret: ""
