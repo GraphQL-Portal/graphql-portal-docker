@@ -1,6 +1,8 @@
 # GraphQL Portal Gateway and Dashboard Docker Builds
 
-![](graphql-portal.gif)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/code-store-platform/graphql-portal-docker/main/graphql-portal.gif" />
+</p>
 
 [![from Paris with Love](https://img.shields.io/badge/from%20Paris%20with-%F0%9F%A4%8D-red)](https://shields.io/)
 
