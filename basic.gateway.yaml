@@ -5,7 +5,7 @@ secret: ""
 apis_path: ""
 sources_path: ""
 middleware_path: ""
-redis_connection_string: ""
+redis_connection_string: "@@REDIS"
 use_dashboard_configs: false
 enable_control_api: false
 log_level: "info"

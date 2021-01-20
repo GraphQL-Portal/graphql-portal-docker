@@ -30,8 +30,6 @@ services:
       - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
       - MONGODB_CONNECTION_STRING=mongodb://gql-portal-mongo:27017/graphql-portal-dashboard
       - DASHBOARD_PORT=3030
-      - SECRET=secret
-      - LOG_LEVEL=log
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:3030" ]
       interval: 5s
