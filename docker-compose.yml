@@ -31,20 +31,12 @@ services:
       - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
       - MONGODB_CONNECTION_STRING=mongodb://gql-portal-mongo:27017/graphql-portal-dashboard
       - DASHBOARD_PORT=3030
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "http://localhost:3030"]
-      start_period: 20s
-      interval: 5s
-      timeout: 5s
-      retries: 5
 
   gql-portal-gateway:
     image: gqlportal/gateway
     depends_on:
-      gql-portal-redis:
-        condition: service_started
-      gql-portal-dashboard:
-        condition: service_healthy
+      - gql-portal-redis
+      - gql-portal-dashboard
     ports:
       - "3000:3000"
     networks:
@@ -54,6 +46,10 @@ services:
     environment:
       - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
       - DASHBOARD_CONNECTION_STRING=http://gql-portal-dashboard:3030
+    command:
+      - "/bin/sh"
+      - "-c"
+      - "echo 'Waiting for 5 seconds for Dashboard to come online...' && /bin/sleep 5 && cd /opt/graphql-portal && graphql-portal"
 
 volumes:
   redis-data:
