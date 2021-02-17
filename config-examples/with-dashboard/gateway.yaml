@@ -8,6 +8,6 @@ redis_connection_string: "@@REDIS_CONNECTION_STRING"
 use_dashboard_configs: true
 dashboard_config:
   connection_string: "@@DASHBOARD_CONNECTION_STRING"
-  secret: "123"
+  secret: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJnYXRld2F5Iiwicm9sZSI6ImdhdGV3YXkiLCJpYXQiOjE2MTM1ODMxNzR9.dIf32qZjvPATeT35ZxXbJYkN6jDL81qVilx69-GvI10"
 enable_control_api: false
 log_level: "info"
