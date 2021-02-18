@@ -18,7 +18,7 @@ This repository also provides example configurations for different launch scenar
 The quickest way to start playing with the gateway is to pull this repository and use a docker-compose file to launch 
 both the Gateway and the Dashboard:
 ```shell
-git clone git@github.com:code-store-platform/graphql-portal-docker.git
+git clone git@github.com:graphql-portal/graphql-portal-docker.git
 cd graphql-portal-docker
 
 docker-compose -f docker-compose.yml up
