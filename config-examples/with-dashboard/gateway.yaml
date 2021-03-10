@@ -4,7 +4,8 @@ pool_size: 1
 apis_path: "config/apidefs"
 sources_path: "config/datasources"
 middleware_path: ""
-redis_connection_string: "@@REDIS_CONNECTION_STRING"
+redis:
+  connection_string: "@@REDIS_CONNECTION_STRING"
 use_dashboard_configs: true
 dashboard_config:
   connection_string: "@@DASHBOARD_CONNECTION_STRING"
