@@ -34,6 +34,8 @@ services:
       - DASHBOARD_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJnYXRld2F5Iiwicm9sZSI6ImdhdGV3YXkiLCJpYXQiOjE2MTM1ODMxNzR9.dIf32qZjvPATeT35ZxXbJYkN6jDL81qVilx69-GvI10
       - DEFAULT_ADMIN_EMAIL=admin@example.com
       - DEFAULT_ADMIN_PASSWORD=Secret123!
+      - GRAPHQL_PLAYGROUND=true
+      - SERVE_STATIC=true
 
   gql-portal-gateway:
     image: gqlportal/gateway
