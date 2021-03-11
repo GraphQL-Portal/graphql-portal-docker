@@ -12,3 +12,7 @@ dashboard_config:
   secret: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJnYXRld2F5Iiwicm9sZSI6ImdhdGV3YXkiLCJpYXQiOjE2MTM1ODMxNzR9.dIf32qZjvPATeT35ZxXbJYkN6jDL81qVilx69-GvI10"
 enable_control_api: false
 log_level: "info"
+cors:
+  enabled: true
+  origins:
+    - http://localhost:3030
