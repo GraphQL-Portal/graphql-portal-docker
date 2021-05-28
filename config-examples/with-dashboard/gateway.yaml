@@ -4,7 +4,7 @@ pool_size: 1
 servername: "localhost:3000"
 redis:
   connection_string: "@@REDIS_CONNECTION_STRING"
-use_dashboard_configs: true
+use_dashboard_configs: false
 dashboard_config:
   connection_string: "@@DASHBOARD_CONNECTION_STRING"
   secret: ""

@@ -1,0 +1,25 @@
+version: 1
+task_definition:
+  services:
+    gql-portal-redis:
+      cpu_shares: 100
+      mem_limit: 134217728
+    gql-portal-mongo:
+      cpu_shares: 100
+      mem_limit: 134217728
+    gql-portal-dashboard:
+      cpu_shares: 100
+      mem_limit: 134217728
+    gql-portal-gateway:
+      cpu_shares: 100
+      mem_limit: 134217728
+  docker_volumes: 
+    - name: redis-data
+      autoprovision: true
+      scope: shared
+    - name: gateway-data
+      autoprovision: true
+      scope: shared
+    - name: mongo-data
+      autoprovision: true
+      scope: shared
