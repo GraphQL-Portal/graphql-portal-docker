@@ -51,27 +51,27 @@ services:
         awslogs-region: us-west-2
         awslogs-stream-prefix: dashboard
 
-  # gql-portal-gateway:
-  #   image: gqlportal/gateway
-  #   ports:
-  #     - "3000:3000"
-  #   networks:
-  #     - graphql-portal
-  #   volumes:
-  #     - gateway-data:/opt/graphql-portal/config/
-  #   environment:
-  #     - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
-  #     - DASHBOARD_CONNECTION_STRING=http://gql-portal-dashboard:3030
-  #   command:
-  #     - "/bin/sh"
-  #     - "-c"
-  #     - "echo 'Waiting for 10 seconds for Dashboard to come online...' && /bin/sleep 10 && cd /opt/graphql-portal && graphql-portal"
-  #   logging:
-  #     driver: awslogs
-  #     options:
-  #       awslogs-group: ec2-tutorial
-  #       awslogs-region: us-west-2
-  #       awslogs-stream-prefix: gateway
+  gql-portal-gateway:
+    image: gqlportal/gateway
+    ports:
+      - "3000:3000"
+    networks:
+      - graphql-portal
+    volumes:
+      - gateway-data:/opt/graphql-portal/config/
+    environment:
+      - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
+      - DASHBOARD_CONNECTION_STRING=http://gql-portal-dashboard:3030
+    command:
+      - "/bin/sh"
+      - "-c"
+      - "echo 'Waiting for 10 seconds for Dashboard to come online...' && /bin/sleep 10 && cd /opt/graphql-portal && graphql-portal"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: ec2-tutorial
+        awslogs-region: us-west-2
+        awslogs-stream-prefix: gateway
 
 volumes:
   redis-data:
