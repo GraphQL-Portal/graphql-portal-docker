@@ -5,6 +5,7 @@ servername: "localhost:3000"
 redis:
   connection_string: "@@REDIS_CONNECTION_STRING"
 use_dashboard_configs: true
+enable_metrics_recording: true
 dashboard_config:
   connection_string: "@@DASHBOARD_CONNECTION_STRING"
   secret: ""
