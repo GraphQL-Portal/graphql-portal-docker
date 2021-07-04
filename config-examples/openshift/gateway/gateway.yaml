@@ -1,0 +1,15 @@
+hostname: "0.0.0.0"
+listen_port: 8080
+pool_size: 1
+servername: "localhost:8080"
+redis:
+  connection_string: "redis://redis:6379"
+use_dashboard_configs: true
+enable_metrics_recording: true
+dashboard_config:
+  connection_string: "@@DASHBOARD_CONNECTION_STRING"
+  secret: ""
+cors:
+  enabled: true
+enable_control_api: false
+log_level: "info"
