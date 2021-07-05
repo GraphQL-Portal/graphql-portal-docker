@@ -11,5 +11,6 @@ dashboard_config:
   secret: ""
 cors:
   enabled: true
+  origins: ["http://gateway:8080", "http://localhost:8080", @@PUBLIC_ORIGIN]
 enable_control_api: false
 log_level: "info"
