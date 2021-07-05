@@ -9,7 +9,7 @@ RUN mkdir ./config
 #RUN wget https://raw.githubusercontent.com/GraphQL-Portal/graphql-portal-docker/main/config-examples/openshift/gateway/gateway.yaml -O /opt/graphql-portal/config/gateway.yaml
 RUN ls -lha
 RUN pwd
-RUN cd ./config && wget https://raw.githubusercontent.com/GraphQL-Portal/graphql-portal-docker/main/config-examples/openshift/gateway/gateway.yaml
+RUN mkdir ./config && cd ./config && wget https://raw.githubusercontent.com/GraphQL-Portal/graphql-portal-docker/main/config-examples/openshift/gateway/gateway.yaml
 
 RUN yarn global add @graphql-portal/gateway
 
