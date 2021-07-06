@@ -40,7 +40,7 @@ EXPOSE 8080
 
 RUN chmod +x ./start.sh
 
-#RUN chgrp -R 0 /usr/app
-RUN chmod g+w /usr/app
+RUN chgrp -R 0 /usr/app
+RUN chmod g+w -R /usr/app
 
 CMD ["./start.sh"]
