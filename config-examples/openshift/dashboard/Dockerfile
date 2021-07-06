@@ -7,6 +7,8 @@ WORKDIR /usr/app
 # Install global packages
 RUN yarn global add serve concurrently
 
+RUN apk add git
+
 # Copy all package.json files, including those from backend
 RUN git clone https://github.com/graphql-portal/graphql-portal-dashboard
 
