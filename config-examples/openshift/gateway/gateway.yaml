@@ -4,6 +4,9 @@ pool_size: 1
 servername: "@@SERVERNAME"
 redis:
   connection_string: "redis://redis:6379"
+redis_logging:
+  enabled: @@REDIS_LOGGING_ENABLED
+  expire: @@REDIS_LOGGING_EXPIRE
 use_dashboard_configs: true
 enable_metrics_recording: true
 dashboard_config:
