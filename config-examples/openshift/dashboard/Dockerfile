@@ -39,7 +39,7 @@ RUN yarn build
 EXPOSE 8008
 EXPOSE 8080
 
-ADD start.sh ./
+ADD ./start.sh ./
 RUN chmod +x ./start.sh
 
 #RUN chgrp -R 0 /usr/app
