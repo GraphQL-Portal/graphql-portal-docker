@@ -8,12 +8,7 @@ WORKDIR /usr/app
 RUN yarn global add serve concurrently
 
 # Copy all package.json files, including those from backend
-COPY package.json ./
-COPY yarn.lock ./
-RUN mkdir -p packages/frontend && mkdir -p packages/backend
-COPY packages/frontend/package.json ./packages/frontend/
-COPY packages/backend/package.json ./packages/backend/
-COPY packages/backend/config ./packages/backend/config
+RUN git clone https://github.com/graphql-portal/graphql-portal-dashboard
 
 # Install packages
 RUN yarn install --frozen-lockfile # --silent
