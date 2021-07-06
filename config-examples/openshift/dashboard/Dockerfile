@@ -33,13 +33,11 @@ ENV REACT_APP_DEFAULT_ADMIN_EMAIL "admin@example.com"
 ENV REACT_APP_DEFAULT_ADMIN_PASSWORD "Secret123!"
 
 # Build
-COPY --chown=1001:0 ./ ./
 RUN yarn build
 
 EXPOSE 8008
 EXPOSE 8080
 
-ADD ./start.sh ./
 RUN chmod +x ./start.sh
 
 #RUN chgrp -R 0 /usr/app
