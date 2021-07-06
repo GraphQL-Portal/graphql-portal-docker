@@ -5,7 +5,7 @@ servername: "@@SERVERNAME"
 redis:
   connection_string: "redis://redis:6379"
 redis_logging:
-  enabled: true
+  enabled: @@REDS_ENABLED
   expire: 3600
 use_dashboard_configs: true
 enable_metrics_recording: true
