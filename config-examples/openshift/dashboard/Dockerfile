@@ -32,6 +32,9 @@ ENV REACT_APP_DASHBOARD_WS_URL "$REACT_APP_DASHBOARD_URL"
 ENV REACT_APP_DEFAULT_ADMIN_EMAIL "admin@example.com"
 ENV REACT_APP_DEFAULT_ADMIN_PASSWORD "Secret123!"
 
+RUN chgrp -R 0 /usr/app
+RUN chmod g+w -R /usr/app
+
 # Build
 RUN yarn build
 
@@ -39,8 +42,5 @@ EXPOSE 8008
 EXPOSE 8080
 
 RUN chmod +x ./start.sh
-
-RUN chgrp -R 0 /usr/app
-RUN chmod g+w -R /usr/app
 
 CMD ["./start.sh"]
