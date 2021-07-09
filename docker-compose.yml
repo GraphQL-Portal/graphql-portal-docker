@@ -32,6 +32,8 @@ services:
       - REDIS_CONNECTION_STRING=redis://gql-portal-redis:6379
       - MONGODB_CONNECTION_STRING=mongodb://gql-portal-mongo:27017/graphql-portal-dashboard
       - GRAPHQL_PLAYGROUND=true
+      - PUBLIC_HOST=http://localhost:3030
+      - CLIENT_HOST=http://localhost:8080
 
   gql-portal-gateway:
     image: gqlportal/gateway
